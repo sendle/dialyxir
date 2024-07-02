@@ -6,13 +6,13 @@ defmodule Dialyxir.Formatter.GithubLong do
   @behaviour Dialyxir.Formatter
 
   @impl Dialyxir.Formatter
-  def format({_tag, {file, location}, {warning_name, arguments}}) do
+  def format(dialyzer_warning = {_tag, {file, location}, {warning_name, arguments}}) do
     base_name = Path.relative_to_cwd(file)
 
     warning = Utils.warning(warning_name)
     string = warning.format_short(arguments)
     long_title = "#{base_name}:#{Utils.format_location(location)}:#{warning_name}"
-    long_text = warning.format_long(arguments)
+    long_text = Dialyxir.Formatter.Dialyxir.format(dialyzer_warning)
 
     case location do
       {line, col} ->
