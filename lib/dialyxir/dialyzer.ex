@@ -31,7 +31,7 @@ defmodule Dialyxir.Dialyzer do
             split[:format] == "github" ->
               Dialyxir.Formatter.Github
 
-            split[:format] == "github" ->
+            split[:format] == "github_long" ->
               Dialyxir.Formatter.GithubLong
 
             split[:format] == "ignore_file" ->
