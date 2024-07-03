@@ -23,6 +23,14 @@ defmodule Dialyxir.FormatterTest do
               "lib/file/warning_type/line.ex:19:4: Function format_long/1 has no local return",
             Formatter.Github =>
               "::warning file=lib/file/warning_type/line.ex,line=19,col=4,title=no_return::Function format_long/1 has no local return.",
+            Formatter.GithubVerbose =>
+              """
+              ::warning file=lib/file/warning_type/line.ex,line=19,col=4,title=no_return::Function format_long/1 has no local return.
+              ::group::lib/file/warning_type/line.ex:19:4:no_return
+              Function format_long/1 has no local return.
+              ________________________________________________________________________________
+              ::endgroup::
+              """,
             Formatter.IgnoreFileStrict =>
               ~s|{"lib/file/warning_type/line.ex", "Function format_long/1 has no local return."},|,
             Formatter.IgnoreFile => ~s|{"lib/file/warning_type/line.ex", :no_return},|,

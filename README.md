@@ -47,6 +47,7 @@ mix dialyzer
   *  `--format dialyxir`           - format the warnings in a pretty printed format. (default)
   *  `--format dialyzer`           - format the warnings in the original Dialyzer format, suitable for ignore file using simple string matches.
   *  `--format github`             - format the warnings in the Github Actions message format.
+  *  `--format github_verbose`     - format the warnings per the gihub format, and include the pretty printed format grouped below each warning.
   *  `--format ignore_file`        - format the warnings in {file, warning} format for Elixir Format ignore file.
   *  `--format ignore_file_strict` - format the warnings in {file, short_description} format for Elixir Format ignore file.
   *  `--quiet`                     - suppress all informational messages.
