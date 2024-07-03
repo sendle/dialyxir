@@ -1,8 +1,6 @@
 defmodule Dialyxir.Formatter.GithubVerbose do
   @moduledoc false
 
-  alias Dialyxir.Formatter.Utils
-
   @behaviour Dialyxir.Formatter
 
   @impl Dialyxir.Formatter
